@@ -20,7 +20,6 @@ class Calculator {
     }
 
     delete() {
-
     }
 
     appendNumber(number) {
@@ -41,3 +40,9 @@ class Calculator {
 }
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.innerText)
+        calculator.updateDisplay()
+    })
+})
